@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Escalas y Arpegios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/scales.css">
+</head>
+<body>
+
+<div class="card">
+
+  <button onclick="history.back()">⬅ Volver</button>
+
+  <h2>🎵 Escalas y Arpegios</h2>
+
+  <div class="controls">
+    <select id="keySelect">
+      <option value="C">Do</option>
+      <option value="D">Re</option>
+      <option value="E">Mi</option>
+      <option value="F">Fa</option>
+      <option value="G">Sol</option>
+      <option value="A">La</option>
+      <option value="B">Si</option>
+    </select>
+
+    <div class="octave-control">
+       <button id="octDown">−</button>
+       <span id="octaveDisplay">Octava 0</span>
+       <button id="octUp">+</button>
+    </div>
+
+
+    <select id="typeSelect">
+      <option value="scale">Escala</option>
+      <option value="arpeggio">Arpegio</option>
+    </select>
+  </div>
+
+  <div id="notesDisplay" class="notes"></div>
+
+  <div id="status" class="status neutral">
+    Elegí opciones y presioná escuchar
+  </div>
+
+  <button id="playBtn">🎹 Escuchar</button>
+  <button id="startBtn">🎤 Activar micrófono</button>
+
+</div>
+
+<script src="/js/scales.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui, sans-serif;
+}
+
+.card {
+  width: 360px;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  color: white;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+select {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.note {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.15);
+  font-weight: bold;
+  min-width: 40px;
+}
+
+.correct {
+  background: rgba(0,255,120,0.3);
+  color: #7CFFB2;
+}
+
+.wrong {
+  background: rgba(255,60,60,0.3);
+  color: #FF9B9B;
+}
+
+.neutral {
+  background: rgba(255,255,255,0.15);
+}
+
+.status {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  margin-top: 8px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: pointer;
+}
+
+.octave-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.octave-control button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2em;
+}
