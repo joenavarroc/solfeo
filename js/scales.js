@@ -12,7 +12,9 @@ const statusEl = document.getElementById("status");
 const playBtn = document.getElementById("playBtn");
 const startBtn = document.getElementById("startBtn");
 const noteNames = ["Do","Re","Mi","Fa","Sol","La","Si"];
-
+const volumeSlider = document.getElementById("volume");
+const scaleSteps = [0,2,4,5,7,9,11]; // escala mayor
+const arpeggioSteps = [0,4,7]; // tríada
 const chromaticNotes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
 
 const noteNamesES = {
@@ -40,12 +42,16 @@ const baseNotes = {
   B: 493.88
 };
 
-const scaleSteps = [0,2,4,5,7,9,11]; // escala mayor
-const arpeggioSteps = [0,4,7]; // tríada
+let volume = 0.7;
+
+volumeSlider.oninput = e => {
+  volume = parseFloat(e.target.value);
+};
 
 playBtn.onclick = () => {
   buildExercise();
   playSequence();
+  statusEl.textContent = "Escuchá y luego cantá…";
 };
 
 startBtn.onclick = async () => {
@@ -115,14 +121,21 @@ function playSequence(){
 }
 
 function playNote(freq){
+  if(!audioCtx) return;
   const osc = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
+
   osc.frequency.value = freq;
+  osc.type = "sine"; // más limpio para cantar
+
   osc.connect(gain);
   gain.connect(audioCtx.destination);
-  gain.gain.value = 0.3;
+
+  gain.gain.value = volume;
+
   osc.start();
   osc.stop(audioCtx.currentTime + 0.6);
+  
 }
 
 function autoCorrelate(buf,sr){
@@ -151,13 +164,18 @@ function listen(){
   analyser.getFloatTimeDomainData(buffer);
   let freq = autoCorrelate(buffer,audioCtx.sampleRate);
 
+  if(freq === -1 || freq < 80 || freq > 1200){
+    requestAnimationFrame(listen);
+    return;
+  }
+
   if(freq !== -1 && currentIndex < exerciseNotes.length){
     let target = exerciseNotes[currentIndex];
     let diff = freq - target;
 
     const noteDivs = document.querySelectorAll(".note");
 
-    if(Math.abs(diff) < 2){
+    if(Math.abs(diff) < 15){
       noteDivs[currentIndex].className = "note correct";
       currentIndex++;
     } else {
