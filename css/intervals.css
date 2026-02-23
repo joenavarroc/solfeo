@@ -36,7 +36,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("/img/logo.png") center / contain no-repeat;
+  background: url("../img/logo.png") center / contain no-repeat;
 
   transform: 
     translateZ(-80px)
@@ -287,4 +287,5 @@ button:active {
 
 .custom-select .options::-webkit-scrollbar {
   display: none;
+
 }
