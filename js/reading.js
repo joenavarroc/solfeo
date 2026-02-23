@@ -360,7 +360,7 @@ function listen(){
     return;
   }
 
-  if(currentIndex < exerciseNotes.length){
+  if(currentIndex < exerciseNotesAll.length){
 
     let target = exerciseNotesAll[currentIndex];
 
@@ -394,7 +394,7 @@ function listen(){
     }
 
   }
-console.log("RMS:", rms);
+  console.log("RMS:", rms);
   requestAnimationFrame(listen);
 }
 
