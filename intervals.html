@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Intervalos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/intervals.css">
+</head>
+<body>
+
+<div class="card">
+
+  <button onclick="history.back()">⬅ Volver</button>
+
+  <h2>Intervalos</h2>
+
+  <div class="controls">
+
+    <!-- TONALIDAD -->
+    <div class="custom-select" id="keySelect">
+      <div class="selected">Do</div>
+      <div class="options">
+        <div data-value="C">Do</div>
+        <div data-value="D">Re</div>
+        <div data-value="E">Mi</div>
+        <div data-value="F">Fa</div>
+        <div data-value="G">Sol</div>
+        <div data-value="A">La</div>
+        <div data-value="B">Si</div>
+      </div>
+    </div>
+
+    <!-- OCTAVA -->
+    <div class="octave-control">
+      <button id="octDown">−</button>
+      <span id="octaveDisplay">Octava 0</span>
+      <button id="octUp">+</button>
+    </div>
+
+    <!-- INTERVALO -->
+    <div class="custom-select" id="intervalSelect">
+      <div class="selected">3ª mayor</div>
+      <div class="options">
+        <div data-value="m2">2ª menor</div>
+        <div data-value="M2">2ª mayor</div>
+        <div data-value="m3">3ª menor</div>
+        <div data-value="M3">3ª mayor</div>
+        <div data-value="P4">4ª justa</div>
+        <div data-value="TT">Tritono</div>
+        <div data-value="P5">5ª justa</div>
+        <div data-value="m6">6ª menor</div>
+        <div data-value="M6">6ª mayor</div>
+        <div data-value="m7">7ª menor</div>
+        <div data-value="M7">7ª mayor</div>
+        <div data-value="P8">Octava</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NOTAS -->
+  <div id="notesDisplay" class="notes"></div>
+
+  <!-- ESTADO -->
+  <div id="status" class="status neutral">
+    Elegí opciones y presioná escuchar
+  </div>
+
+  <!-- VOLUMEN -->
+  <div style="font-size:0.85em; opacity:0.8;">🔊 Volumen</div>
+  <input type="range" id="volume" min="0" max="3" step="0.01" value="1">
+
+  <button id="playBtn">🎹 Escuchar</button>
+  <button id="startBtn">🎤 Activar micrófono</button>
+
+</div>
+
+<script src="js/intervals.js"></script>
+</body>
+</html>

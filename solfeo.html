@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Solfeo entonado</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/solfeo.css">
+</head>
+<body>
+
+<div class="card">
+
+  <button onclick="history.back()">⬅ Volver</button>
+
+  <h2>📖 Solfeo entonado</h2>
+
+  <div class="controls">
+    <!-- Selector de nota -->
+    <div class="custom-select" id="keySelect">
+      <div class="selected">Do</div>
+      <div class="options">
+        <div data-value="C">Do</div>
+        <div data-value="D">Re</div>
+        <div data-value="E">Mi</div>
+        <div data-value="F">Fa</div>
+        <div data-value="G">Sol</div>
+        <div data-value="A">La</div>
+        <div data-value="B">Si</div>
+      </div>
+    </div>
+
+    <!-- Control de octava -->
+    <div class="octave-control">
+       <button id="octDown">−</button>
+       <span id="octaveDisplay">Octava 0</span>
+       <button id="octUp">+</button>
+    </div>
+
+    <!-- Tipo: Escala o Arpegio -->
+    <div class="custom-select" id="typeSelect">
+      <div class="selected">Escala</div>
+      <div class="options">
+        <div data-value="scale">Escala</div>
+        <div data-value="arpeggio">Arpegio</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aquí se mostrará solo la tónica -->
+  <div id="notesDisplay" class="notes">
+    <div class="note neutral">Do</div>
+  </div>
+
+  <div id="status" class="status neutral">
+    Elegí nota y octava, luego presioná escuchar 🎵
+  </div>
+
+  <div style="font-size:0.85em; opacity:0.8;">🔊 Volumen</div>
+  <input type="range" id="volume" min="0" max="3" step="0.01" value="1">
+
+  <button id="playBtn">🎹 Escuchar</button>
+  <button id="startBtn">🎤 Activar micrófono</button>
+
+</div>
+
+<script src="js/solfeo.js"></script>
+</body>
+</html>
