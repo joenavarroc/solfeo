@@ -548,6 +548,10 @@ document.querySelectorAll(".custom-select").forEach(select => {
   });
 });
 
+// valores iniciales reales
+keySelect.value = "C";
+typeSelect.value = "scale";
+
 document.addEventListener("click", () => {
   document.querySelectorAll(".custom-select").forEach(select => {
     select.classList.remove("open");
