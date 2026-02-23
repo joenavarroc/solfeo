@@ -377,8 +377,8 @@ function listen(){
       // limpiar historial para próxima nota
       freqHistory = [];
 
-      if(currentIndex >= exerciseNotes.length){
-        statusEl.textContent = "¡Perfecto! 🎉";
+      if(currentIndex >= exerciseNotesAll.length){
+          statusEl.textContent = "¡Perfecto! 🎉";
       }
 
     }
