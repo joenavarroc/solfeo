@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Escalas y Arpegios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/scales.css">
+</head>
+<body>
+
+<div class="card">
+
+  <button onclick="history.back()">⬅ Volver</button>
+
+  <h2>Escalas y Arpegios</h2>
+
+  <div class="controls">
+    <div class="custom-select" id="keySelect">
+      <div class="selected">Do</div>
+      <div class="options">
+        <div data-value="C">Do</div>
+        <div data-value="D">Re</div>
+        <div data-value="E">Mi</div>
+        <div data-value="F">Fa</div>
+        <div data-value="G">Sol</div>
+        <div data-value="A">La</div>
+        <div data-value="B">Si</div>
+      </div>
+    </div>
+
+    <div class="octave-control">
+       <button id="octDown">−</button>
+       <span id="octaveDisplay">Octava 0</span>
+       <button id="octUp">+</button>
+    </div>
+
+
+    <div class="custom-select" id="typeSelect">
+      <div class="selected">Escala</div>
+      <div class="options">
+        <div data-value="scale">Escala</div>
+        <div data-value="arpeggio">Arpegio</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="notesDisplay" class="notes"></div>
+
+  <div id="status" class="status neutral">
+    Elegí opciones y presioná escuchar
+  </div>
+
+  <div style="font-size:0.85em; opacity:0.8;">🔊 Volumen</div>
+  <input type="range" id="volume" min="0" max="3" step="0.01" value="1">
+  <button id="playBtn">🎹 Escuchar</button>
+  <button id="startBtn">🎤 Activar micrófono</button>
+
+</div>
+
+<script src="js/scales.js"></script>
+</body>
+</html>
+
